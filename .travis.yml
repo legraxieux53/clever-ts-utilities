@@ -4,6 +4,6 @@ node_js:
 
 deploy:
   provider: npm
-  email: EMAIL
-  api_key: NPM_TOKEN
+  email: [EMAIL]
+  api_key: [NPM_TOKEN]
   tag: next
