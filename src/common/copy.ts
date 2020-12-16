@@ -1,6 +1,9 @@
 import {jsType} from "./jstype";
 
-export function copy(obj: any) {
+export function copy(obj: any): any {
+    if (jsType(obj) === 'undefined') {
+        return undefined;
+      }
     if (jsType(obj) === 'array') {
       return [...obj];
     }
