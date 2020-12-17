@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/legraxieux53/clever-ts-utilities/issues"
   },
-  "homepage": "https://github.com/legraxieux53/clever-ts-utilities#readme"
+  "homepage": "https://github.com/legraxieux53/clever-ts-utilities#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "eslint": "^7.15.0",
+    "eslint-config-google": "^0.14.0"
+  }
 }
