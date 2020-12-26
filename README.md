@@ -4,6 +4,10 @@ This library is a set of typescript utilities to save time
 
 ## Release
 
+### v1.2.0
+
+- Addition of dateCompare function
+
 ### v1.0.1
 
 - addition of documentation
@@ -26,7 +30,7 @@ run
 returns an items paginated array from an array, index page and size page
 
 ```typescript
-function paginate(params: {data: Array<any>, indexPage: number, pageSize: number}): Array<any>
+paginate(params: {data: Array<any>, indexPage: number, pageSize: number}): Array<any>
 ```
 
 ## Common
@@ -36,7 +40,7 @@ function paginate(params: {data: Array<any>, indexPage: number, pageSize: number
 By default javacript when assigning one variable to another, refers to the same memory address. This method allows you to copy the passed element whatever its type.
 
 ```typescript
-function copy(obj: any): any
+copy(obj: any): any
 ```
 
 ### jsType
@@ -44,7 +48,7 @@ function copy(obj: any): any
 Used to literally determine the type of the passed object (including the array type)
 
 ```typescript
-function jsType(obj: any): string
+jsType(obj: any): string
 ```
 
 ## Dates
@@ -54,7 +58,15 @@ function jsType(obj: any): string
 Allows you to perform arithmetic operations on dates
 
 ```typescript
-function dateOperation(params: {date: Date, amount: number, operation: DateOperationEnum}): Date
+dateOperation(params: {date: Date, amount: number, operation: DateOperationEnum}): Date
+```
+
+### dateCompare
+
+Allow you to quickly compare dates
+
+```typescript
+dateCompare(first: Date, operator: DateCompareOperator, second: Date): boolean
 ```
 
 ## Strings
@@ -64,7 +76,7 @@ function dateOperation(params: {date: Date, amount: number, operation: DateOpera
 Erase spaces in a character chain
 
 ```typescript
-function cleanSpace(str: string): string
+cleanSpace(str: string): string
 ```
 
 ### thousandSeparator
@@ -72,5 +84,5 @@ function cleanSpace(str: string): string
 Adds thousands separators in a string
 
 ```typescript
-function thousandSeparator(nombre: string | number, args: ThousandSeparatorArg = {decimal: true, pres: 2, arround: false}): string
+thousandSeparator(nombre: string | number, args: ThousandSeparatorArg = {decimal: true, pres: 2, arround: false}): string
 ```
