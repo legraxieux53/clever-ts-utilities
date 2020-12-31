@@ -4,6 +4,11 @@ This library is a set of typescript utilities to save time
 
 ## Release
 
+### v1.4.0
+
+- Addition of fileToBase64 function
+- Addition of fileToBlob function
+
 ### v1.3.0
 
 - Addition of isUndefinedOrNull function
@@ -106,4 +111,22 @@ deternine if a string is undefined or null or empty.
 
 ```typescript
 isStringUndefinedOrNullOrEmpty(data: string): boolean
+```
+
+## Files
+
+### fileToBase64
+
+Convert file to base 64
+
+```typescript
+fileToBase64(file: File): Promise<string | any>
+```
+
+### fileToBlob
+
+Convert file to blob
+
+```typescript
+fileToBlob(file: File): Promise<Blob | any>
 ```
