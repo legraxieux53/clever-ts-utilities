@@ -4,6 +4,11 @@ This library is a set of typescript utilities to save time
 
 ## Release
 
+### v1.3.0
+
+- Addition of isUndefinedOrNull function
+- Addition of isStringUndefinedOrNullOrEmpty function
+
 ### v1.2.0
 
 - Addition of dateCompare function
@@ -41,6 +46,14 @@ By default javacript when assigning one variable to another, refers to the same 
 
 ```typescript
 copy(obj: any): any
+```
+
+### isUndefinedOrNull
+
+deternine if data is undefined or null.
+
+```typescript
+isUndefinedOrNull(data: string): boolean
 ```
 
 ### jsType
@@ -85,4 +98,12 @@ Adds thousands separators in a string
 
 ```typescript
 thousandSeparator(nombre: string | number, args: ThousandSeparatorArg = {decimal: true, pres: 2, arround: false}): string
+```
+
+### isStringUndefinedOrNull
+
+deternine if a string is undefined or null or empty.
+
+```typescript
+isStringUndefinedOrNullOrEmpty(data: string): boolean
 ```
