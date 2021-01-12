@@ -4,6 +4,13 @@ This library is a set of typescript utilities to save time
 
 ## Release
 
+### v1.5.0
+
+- Addition of strRemoveBeginingCommonChars
+- Addition of getCharsAt
+- Addition of getValuesFromDictionnary
+- Addition of isAllEqual
+
 ### v1.4.0
 
 - Addition of fileToBase64 function
@@ -41,6 +48,30 @@ returns an items paginated array from an array, index page and size page
 
 ```typescript
 paginate(params: {data: Array<any>, indexPage: number, pageSize: number}): Array<any>
+```
+
+### strRemoveBeginingCommonChars
+
+Remove begening common chars of two strings
+
+```typescript
+strRemoveBeginingCommonChars(params: {[key: string]: string}): {[key: string]: string}
+```
+
+### getDictionnaryValues
+
+Get values from a dictionary
+
+```typescript
+getValuesFromDictionnary(dic: {[key: string]: any}): any[]
+```
+
+### isAllEqual
+
+Checks that all values in an array are equal
+
+```typescript
+isAllEqual(chars: any[]): boolean
 ```
 
 ## Common
@@ -111,6 +142,14 @@ deternine if a string is undefined or null or empty.
 
 ```typescript
 isStringUndefinedOrNullOrEmpty(data: string): boolean
+```
+
+### getCharsAt
+
+Reduce string dictionnary to chars at specified position
+
+```typescript
+getCharsAt(paramList: {[key: string]: string}, ofs: number): {[key: string]: string}
 ```
 
 ## Files

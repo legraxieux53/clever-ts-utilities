@@ -1,10 +1,12 @@
 module.exports = {
     "env": {
         "browser": true,
-        "es2020": true
+        "es2020": true,
+        "es6": true
     },
     "extends": [
-        "google"
+        "google",
+        "eslint:recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -15,5 +17,6 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
+        // enable additional rules
     }
 };
