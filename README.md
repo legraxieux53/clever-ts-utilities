@@ -45,10 +45,52 @@ This library is a set of typescript utilities to save time
 
 - library deplyment
 
+## Summary
+
+### [Install](#Install)
+
+### [Arrays](#Arrays)
+
+- [paginate](#paginate)
+- [strRemoveBeginingCommonChars](#strRemoveBeginingCommonChars)
+- [getDictionnaryValues](#getDictionnaryValues)
+- [isAllEqual](#isAllEqual)
+- [enumarableFromListEqual](#enumarableFromListEqual)
+- [deleteFromArray](#deleteFromArray)
+
+### [Common](#Common)
+
+- [copy](#copy)
+- [isUndefinedOrNull](#isUndefinedOrNull)
+- [jsType](#jsType)
+- [getObjectByFieldValue](#getObjectByFieldValue)
+
+### [Dates](#Dates)
+
+- [dateOperation](#dateOperation)
+- [dateCompare](#dateCompare)
+
+### [Strings](#Strings)
+
+- [cleanSpace](#cleanSpace)
+- [thousandSeparator](#thousandSeparator)
+- [isStringUndefinedOrNull](#isStringUndefinedOrNull)
+- [getCharsAt](#getCharsAt)
+- [insertString](#insertString)
+
+### [Files](#Files)
+
+- [fileToBase64](#fileToBase64)
+- [fileToBlob](#fileToBlob)
+- [fileToString](#fileToString)
+- [serializeFile](#serializeFile)
+- [fileModelToBlob](#fileModelToBlob)
+- [buildDownloadFileUrl](#buildDownloadFileUrl)
+
 ## Install
 
 run
-`npm install clever-ts-utilities`
+`npm install clever-ts-utilities`. And then, use functions like this: `let clone = copy(data);`
 
 ## Arrays
 
