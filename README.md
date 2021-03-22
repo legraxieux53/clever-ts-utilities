@@ -4,6 +4,16 @@ This library is a set of typescript utilities to save time
 
 ## Release
 
+### v1.6.0
+
+- Addition of fileToString
+- Addition of serializeFile
+- Addition of fileModelToBlob
+- Addition of buildDownloadFileUrl
+- Addition of insertString
+- Addition of enumarableFromListEqual
+- Addition of deleteFromArray
+
 ### v1.5.0
 
 - Addition of strRemoveBeginingCommonChars
@@ -74,6 +84,22 @@ Checks that all values in an array are equal
 isAllEqual(chars: any[]): boolean
 ```
 
+### enumarableFromListEqual
+
+Return a sublist from a list that has column that contain a certain value.
+
+```typescript
+enumarableFromListEqual(list: any[], column: string, value: any): any[]
+```
+
+### deleteFromArray
+
+Delete items from an array.
+
+```typescript
+deleteFromArray(array: any[], item: any): any[] | boolean
+```
+
 ## Common
 
 ### copy
@@ -98,6 +124,14 @@ Used to literally determine the type of the passed object (including the array t
 
 ```typescript
 jsType(obj: any): string
+```
+
+### getObjectByFieldValue
+
+Get an object in a list by value of one field, like id.
+
+```typescript
+getObjectByFieldValue(obj: any[], fieldname: string, fieldvalue: any): any
 ```
 
 ## Dates
@@ -152,6 +186,19 @@ Reduce string dictionnary to chars at specified position
 getCharsAt(paramList: {[key: string]: string}, ofs: number): {[key: string]: string}
 ```
 
+### insertString
+
+Insert string into another by refering an anchor around it string can be added.
+
+```typescript
+insertString(params: {
+  str: string;
+  toAdd: string;
+  anchor: string;
+  position: "before" | "after";
+}): string
+```
+
 ## Files
 
 ### fileToBase64
@@ -168,4 +215,36 @@ Convert file to blob
 
 ```typescript
 fileToBlob(file: File): Promise<Blob | any>
+```
+
+### fileToString
+
+Convert file to string
+
+```typescript
+fileToString(file: File): Promise<string | ArrayBuffer>
+```
+
+### serializeFile
+
+Convert File objet to FileModel
+
+```typescript
+serializeFile(file: File): Promise<FileModel>
+```
+
+### fileModelToBlob
+
+Convert FileModel objet to Blob
+
+```typescript
+fileModelToBlob(fileModel: FileModel): Blob
+```
+
+### buildDownloadFileUrl
+
+Return the download url of a file
+
+```typescript
+buildDownloadFileUrl(file: FileModel): string
 ```
