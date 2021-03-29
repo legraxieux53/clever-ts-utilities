@@ -1,11 +1,11 @@
 {
   "name": "clever-ts-utilities",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "This library is a set of typescript utilities to save time",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
     "build": "tsc --build"
   },
   "repository": {
@@ -20,9 +20,17 @@
   },
   "homepage": "https://github.com/legraxieux53/clever-ts-utilities#readme",
   "devDependencies": {
+    "@types/jasmine": "^3.6.9",
     "@typescript-eslint/eslint-plugin": "^4.10.0",
     "@typescript-eslint/parser": "^4.10.0",
     "eslint": "^7.15.0",
-    "eslint-config-google": "^0.14.0"
+    "eslint-config-google": "^0.14.0",
+    "jasmine": "^3.7.0",
+    "jasmine-ts-console-reporter": "^3.1.1"
+  },
+  "dependencies": {
+    "nyc": "^15.1.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
   }
 }

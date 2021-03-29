@@ -4,6 +4,10 @@ This library is a set of typescript utilities to save time
 
 ## Release
 
+### v1.6.2
+
+- Bug fix: isUndefinedOrNull not took 0
+
 ### v1.6.0
 
 - Addition of fileToString
