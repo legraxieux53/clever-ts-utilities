@@ -2,12 +2,12 @@ import { Observer } from './../core-patterns/observer';
 import { Collection } from './../core-patterns/collection';
 import { Memento } from './../core-patterns/memento';
 import { Originator } from './../core-patterns/originator';
-import {HttpRequestPenddingMemento} from './http-request-pendding.memento';
+import { HttpRequestPenddingMemento } from './http-request-pendding.memento';
 import { Iterator, Subject } from '../core-patterns';
 
 export class HttpRequestPendingService implements Originator<string> {
   private url: string;
-  readonly subject = new Subject<string>('HttpRequestPendingService',
+  readonly subject = new Subject<boolean>('HttpRequestPendingService',
     new HttpRequestPendingCollection());
 
   constructor() {
@@ -19,11 +19,16 @@ export class HttpRequestPendingService implements Originator<string> {
   }
 
   private updateObserver() {
-    this.subject.notifyObservers(this.url);
+    if (this.urlExist(this.url)) {
+      this.subject.notifyObservers(true);
+    } else {
+      this.subject.notifyObservers(false);
+    }
   }
 
   saveState(): Memento {
     const memento: Memento = new HttpRequestPenddingMemento(this, this.url);
+    this.updateObserver();
     return memento;
   }
 
@@ -59,19 +64,19 @@ export class HttpRequestPendingService implements Originator<string> {
 }
 
 
-export class HttpRequestPendingCollection implements Collection<Observer<string>> {
-  private requests: Observer<string>[] = [];
+export class HttpRequestPendingCollection implements Collection<Observer<boolean>> {
+  private requests: Observer<boolean>[] = [];
 
-  createIterator(): Iterator<Observer<string>> {
+  createIterator(): Iterator<Observer<boolean>> {
     return new HttpRequestPendingIteration(this);
   }
-  getItems(): Observer<string>[] {
+  getItems(): Observer<boolean>[] {
     return this.requests;
   }
-  add(item: Observer<string>): void {
+  add(item: Observer<boolean>): void {
     this.requests.push(item);
   }
-  remove(item: Observer<string>): void {
+  remove(item: Observer<boolean>): void {
     this.requests = this.requests.filter(_item => item.getObserverData() !== _item.getObserverData());
   }
   clear(): void {
@@ -79,11 +84,11 @@ export class HttpRequestPendingCollection implements Collection<Observer<string>
   }
 }
 
-export class HttpRequestPendingIteration implements Iterator<Observer<string>> {
+export class HttpRequestPendingIteration implements Iterator<Observer<boolean>> {
   private position = -1;
   constructor(private collection: HttpRequestPendingCollection) { }
-  
-  getNext(): Observer<string> {
+
+  getNext(): Observer<boolean> {
     this.position++;
     return this.collection[this.position];
   }
@@ -92,12 +97,12 @@ export class HttpRequestPendingIteration implements Iterator<Observer<string>> {
   }
   hasMore(): boolean {
     try {
-      return !!this.collection[this.position + 1];
+      return !!this.collection.getItems()[this.position + 1];
     } catch (e) {
       return false;
     }
   }
-  toList(): Observer<string>[] {
+  toList(): Observer<boolean>[] {
     return this.collection.getItems();
   }
   getCursor(): number {
