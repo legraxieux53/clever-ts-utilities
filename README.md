@@ -4,6 +4,11 @@ This library is a set of typescript utilities to save time
 
 ## Release
 
+### v1.7.0
+
+- Feature: Manage chars itterations on string
+- Feature: Making shell of iteration design pattern
+
 ### v1.6.2
 
 - Bug fix: isUndefinedOrNull not took 0
@@ -81,6 +86,7 @@ This library is a set of typescript utilities to save time
 - [isStringUndefinedOrNull](#isStringUndefinedOrNull)
 - [getCharsAt](#getCharsAt)
 - [insertString](#insertString)
+- [CharsCollection & CharsIteration](#CharsCollection_&_CharsIteration)
 
 ### [Files](#Files)
 
@@ -243,6 +249,19 @@ insertString(params: {
   anchor: string;
   position: "before" | "after";
 }): string
+```
+
+### CharsCollection\_&_CharsIteration
+
+Manage iterations on chars in string
+
+```typescript
+const charCollection = new CharsCollection("alphabet");
+const charIteration = charCollection.createIterator();
+while (charIteration.hasMore()) {
+  console.log(charIteration.getNext());
+}
+console.log(charIteration.toList());
 ```
 
 ## Files
