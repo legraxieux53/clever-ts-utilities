@@ -89,7 +89,7 @@ export class HttpRequestPendingIteration implements Iterator<Observer<boolean>> 
   constructor(private collection: HttpRequestPendingCollection) { }
 
   getNext(): Observer<boolean> {
-    const result = this.collection[this.position];
+    const result = this.collection.getItems()[this.position];
     this.position++;
     return result;
   }
