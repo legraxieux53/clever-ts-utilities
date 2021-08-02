@@ -5,53 +5,54 @@ import { Originator } from './../core-patterns/originator';
 import { HttpRequestPenddingMemento } from './http-request-pendding.memento';
 import { Iterator, Subject } from '../core-patterns';
 
-export class HttpRequestPendingService implements Originator<string> {
+export class HttpRequestPendingService implements Originator<string>, Subject {
+  static classID = 'HttpRequestPendingService';
+
   private url: string;
-  readonly subject = new Subject<boolean>('HttpRequestPendingService',
-    new HttpRequestPendingCollection());
+  private observers: Collection<Observer>;
 
   constructor() {
-    this.updateObserver();
+    this.observers = new HttpRequestPendingCollection();
+    this.notifyObservers();
+  }
+
+  registerObserver(obs: Observer): void {
+    this.observers.add(obs);
+  }
+  unregisterObserver(obs: Observer): void {
+    this.observers.remove(obs);
+  }
+  notifyObservers(): void {
+    const observersIterator = this.observers.createIterator();
+    observersIterator.reset();
+    while(observersIterator.hasMore()) {
+      const next = observersIterator.getNext();
+      next.notify(HttpRequestPendingService.classID);
+    }
   }
 
   private initializeState() {
     this.url = undefined;
   }
 
-  private updateObserver() {
-    if (this.urlExist(this.url)) {
-      this.subject.notifyObservers(true);
-    } else {
-      this.subject.notifyObservers(false);
-    }
-  }
-
   saveState(): Memento {
     const memento: Memento = new HttpRequestPenddingMemento(this, this.url);
-    this.updateObserver();
+    this.notifyObservers();
     return memento;
   }
 
   setState(state: string) {
     this.url = state;
-    this.updateObserver();
+    this.notifyObservers();
   }
 
-  // getStateAsync(): Observable<string> {
-  //   return this.subject.asObservable();
-  // }
-
-  // isPendingAsync(): Observable<boolean> {
-  //   try {
-  //     return this.getStateAsync().pipe(
-  //       map((item) => {
-  //         return this.urlExist(item);
-  //       })
-  //     );
-  //   } catch (e) {
-  //     return of(false);
-  //   }
-  // }
+  isPending(): boolean {
+    try {
+      return this.urlExist(this.url);
+    } catch (e) {
+      return false;
+    }
+  }
 
   private urlExist(url: string): boolean {
     return url &&
@@ -64,31 +65,32 @@ export class HttpRequestPendingService implements Originator<string> {
 }
 
 
-export class HttpRequestPendingCollection implements Collection<Observer<boolean>> {
-  private requests: Observer<boolean>[] = [];
+export class HttpRequestPendingCollection implements Collection<Observer> {
+  private requests: Observer[] = [];
 
-  createIterator(): Iterator<Observer<boolean>> {
+  createIterator(): Iterator<Observer> {
     return new HttpRequestPendingIteration(this);
   }
-  getItems(): Observer<boolean>[] {
+  getItems(): Observer[] {
     return this.requests;
   }
-  add(item: Observer<boolean>): void {
+  add(item: Observer): void {
     this.requests.push(item);
   }
-  remove(item: Observer<boolean>): void {
-    this.requests = this.requests.filter(_item => item.getObserverData() !== _item.getObserverData());
+  remove(item: Observer): void {
+    this.requests = this.requests.filter(_item => _item !== item);
   }
+
   clear(): void {
     this.requests = [];
   }
 }
 
-export class HttpRequestPendingIteration implements Iterator<Observer<boolean>> {
+export class HttpRequestPendingIteration implements Iterator<Observer> {
   private position = 0;
   constructor(private collection: HttpRequestPendingCollection) { }
 
-  getNext(): Observer<boolean> {
+  getNext(): Observer {
     const result = this.collection.getItems()[this.position];
     this.position++;
     return result;
@@ -103,7 +105,7 @@ export class HttpRequestPendingIteration implements Iterator<Observer<boolean>> 
       return false;
     }
   }
-  toList(): Observer<boolean>[] {
+  toList(): Observer[] {
     return this.collection.getItems();
   }
   getCursor(): number {

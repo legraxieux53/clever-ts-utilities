@@ -1,4 +1,3 @@
-export interface Observer<T> {
-    notify(id: string, data?: T): void;
-    getObserverData(): T;
+export interface Observer {
+    notify(id?: string): void;
 }
