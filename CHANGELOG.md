@@ -15,6 +15,7 @@
 *  manage httprequest pending ([3b04872e](https://github.com/legraxieux53/clever-ts-utilities/commit/3b04872eba2cf985f0dfd052c2e353bd891fbd89))
 *  Manage iterations ([cefc3e09](https://github.com/legraxieux53/clever-ts-utilities/commit/cefc3e09dbfbc71ca6ea5714801d671952702990))
 *  isUndefinedOrNull not took 0 ([df2fa8d1](https://github.com/legraxieux53/clever-ts-utilities/commit/df2fa8d1aba9dcd1808e80c22a8a321d5ec1f8f6))
+
 #### 1.8.0 (2021-08-02)
 
 ##### Bug Fixes
