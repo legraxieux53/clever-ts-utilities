@@ -26,6 +26,7 @@ This library is a set of typescript utilities to save time
 
 - [dateOperation](#dateOperation)
 - [dateCompare](#dateCompare)
+- [dateMonthPeriod](#dateMonthPeriod)
 
 ### [Strings](#Strings)
 
@@ -159,6 +160,14 @@ Allow you to quickly compare dates
 
 ```typescript
 dateCompare(first: Date, operator: DateCompareOperator, second: Date): boolean
+```
+
+### dateMonthPeriod
+
+Takes date and return first and last date of the current month
+
+```typescript
+dateMonthPeriod(date: Date): Array<Date>
 ```
 
 ## Strings
