@@ -14,6 +14,7 @@ This library is a set of typescript utilities to save time
 - [isAllEqual](#isAllEqual)
 - [enumarableFromListEqual](#enumarableFromListEqual)
 - [deleteFromArray](#deleteFromArray)
+- [objectSort](#objectSort)
 
 ### [Common](#Common)
 
@@ -108,6 +109,14 @@ Delete items from an array.
 
 ```typescript
 deleteFromArray(array: any[], item: any): any[] | boolean
+```
+
+### objectSort
+
+Sort array by property.
+
+```typescript
+objectSort(arr: Array<any>, prop: string, isAscendent: boolean = true): Array<any>
 ```
 
 ## Common
