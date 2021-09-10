@@ -2,58 +2,6 @@
 
 This library is a set of typescript utilities to save time
 
-## Release
-
-### v1.7.0
-
-- Feature: Manage chars itterations on string
-- Feature: Making shell of iteration design pattern
-
-### v1.6.2
-
-- Bug fix: isUndefinedOrNull not took 0
-
-### v1.6.0
-
-- Addition of fileToString
-- Addition of serializeFile
-- Addition of fileModelToBlob
-- Addition of buildDownloadFileUrl
-- Addition of insertString
-- Addition of enumarableFromListEqual
-- Addition of deleteFromArray
-
-### v1.5.0
-
-- Addition of strRemoveBeginingCommonChars
-- Addition of getCharsAt
-- Addition of getValuesFromDictionnary
-- Addition of isAllEqual
-
-### v1.4.0
-
-- Addition of fileToBase64 function
-- Addition of fileToBlob function
-
-### v1.3.0
-
-- Addition of isUndefinedOrNull function
-- Addition of isStringUndefinedOrNullOrEmpty function
-
-### v1.2.0
-
-- Addition of dateCompare function
-
-### v1.0.1
-
-- addition of documentation
-- Change the paginate pageIndex property to indexPage
-- Management of the undefined type in the copy function
-
-### v1.0.0
-
-- library deplyment
-
 ## Summary
 
 ### [Install](#Install)
@@ -66,6 +14,7 @@ This library is a set of typescript utilities to save time
 - [isAllEqual](#isAllEqual)
 - [enumarableFromListEqual](#enumarableFromListEqual)
 - [deleteFromArray](#deleteFromArray)
+- [objectSort](#objectSort)
 
 ### [Common](#Common)
 
@@ -78,6 +27,7 @@ This library is a set of typescript utilities to save time
 
 - [dateOperation](#dateOperation)
 - [dateCompare](#dateCompare)
+- [dateMonthPeriod](#dateMonthPeriod)
 
 ### [Strings](#Strings)
 
@@ -96,6 +46,15 @@ This library is a set of typescript utilities to save time
 - [serializeFile](#serializeFile)
 - [fileModelToBlob](#fileModelToBlob)
 - [buildDownloadFileUrl](#buildDownloadFileUrl)
+
+### [HttpRequestPendingFacade](#HttpRequestPendingFacade)
+
+- [getInstance](#getInstance)
+- [incrementUrl](#incrementUrl)
+- [decrementUrl](#decrementUrl)
+- [isPending](#isPending)
+- [addObserver](#addObserver)
+- [removeObserver](#removeObserver)
 
 ## Install
 
@@ -152,6 +111,14 @@ Delete items from an array.
 deleteFromArray(array: any[], item: any): any[] | boolean
 ```
 
+### objectSort
+
+Sort array by property.
+
+```typescript
+objectSort(arr: Array<any>, prop: string, isAscendent: boolean = true): Array<any>
+```
+
 ## Common
 
 ### copy
@@ -202,6 +169,14 @@ Allow you to quickly compare dates
 
 ```typescript
 dateCompare(first: Date, operator: DateCompareOperator, second: Date): boolean
+```
+
+### dateMonthPeriod
+
+Takes date and return first and last date of the current month
+
+```typescript
+dateMonthPeriod(date: Date): Array<Date>
 ```
 
 ## Strings
@@ -313,3 +288,31 @@ Return the download url of a file
 ```typescript
 buildDownloadFileUrl(file: FileModel): string
 ```
+
+## HttpRequestPendingFacade
+
+Class that manage http request pendings
+
+### getInstance
+
+Get instance of the class
+
+### incrementUrl
+
+Increment the url collection
+
+### decrementUrl
+
+Decrement the url collection
+
+### isPending
+
+Check if request is pending. It must be used in Observer class.
+
+### addObserver
+
+Register observer
+
+### removeObserver
+
+Unregister observer

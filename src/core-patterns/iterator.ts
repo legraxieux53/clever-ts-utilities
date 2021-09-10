@@ -16,11 +16,13 @@ export interface Iterator<T> {
 
   /**
    * Return a list of items
+   * @deprecated Use getItems from Collection
    */
   toList(): T[];
 
   /**
    * Return the curent cursor
+   * @deprecated
    */
   getCursor(): number;
 }

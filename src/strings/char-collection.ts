@@ -6,6 +6,15 @@ import { Collection, Iterator } from "../core-patterns";
 export class CharsCollection implements Collection<string> {
   // eslint-disable-next-line require-jsdoc
   constructor(private str: string) {}
+  add(item: string): void {
+    throw new Error("Method not implemented.");
+  }
+  remove(item: string): void {
+    throw new Error("Method not implemented.");
+  }
+  clear(): void {
+    throw new Error("Method not implemented.");
+  }
 
   // eslint-disable-next-line require-jsdoc
   getItems(): string[] {
