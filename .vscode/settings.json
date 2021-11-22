@@ -3,5 +3,8 @@
   "eslint.debug": true,
   "eslint.format.enable": true,
   "eslint.lintTask.enable": true,
-  "conventionalCommits.scopes": ["types"]
+  "conventionalCommits.scopes": [
+    "types",
+    "trim-object"
+  ]
 }

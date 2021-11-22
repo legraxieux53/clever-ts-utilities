@@ -37,6 +37,7 @@ This library is a set of typescript utilities to save time
 - [getCharsAt](#getCharsAt)
 - [insertString](#insertString)
 - [CharsCollection & CharsIteration](#CharsCollection_&_CharsIteration)
+- [Trim Object](#Trim_Object)
 
 ### [Files](#Files)
 
@@ -237,6 +238,70 @@ while (charIteration.hasMore()) {
   console.log(charIteration.getNext());
 }
 console.log(charIteration.toList());
+```
+
+### Trim_Object
+
+Apply trim on all properties of an object
+
+```typescript
+trimObject(obj: any): any;
+
+------------------------------------
+// Example:
+
+const obj: any = {
+    alpha: '   dfg  dfg     ',
+    beta: '     ddgdg    ',
+    qs: [
+        {
+            al: ' dfgdf ',
+            df: 2,
+            azq: false
+        },
+        {
+            al: ' dfgdf ',
+            df: 2,
+            azq: false
+        },
+    ],
+    az: {
+        alpha2: '   dgfgd dfgdfg  ',
+        beta2: {
+            alpha3: '   dfgdfg   dfg',
+            sd: 12,
+            xd: true,
+        }
+    }
+}
+
+console.log(trimObject(obj));
+
+// Output:
+// {
+//   "alpha": "dfg  dfg",
+//   "beta": "ddgdg",
+//   "qs": [
+//     {
+//       "al": "dfgdf",
+//       "df": 2,
+//       "azq": false
+//     },
+//     {
+//       "al": "dfgdf",
+//       "df": 2,
+//       "azq": false
+//     }
+//   ],
+//   "az": {
+//     "alpha2": "dgfgd dfgdfg",
+//     "beta2": {
+//       "alpha3": "dfgdfg   dfg",
+//       "sd": 12,
+//       "xd": true
+//     }
+//   }
+// }
 ```
 
 ## Files
