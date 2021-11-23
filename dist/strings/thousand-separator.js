@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var clean_space_1 = require("./clean-space");
+exports.ajouterSeparateurDeMillier = exports.thousandSeparator = void 0;
+const clean_space_1 = require("./clean-space");
 /**
  * Ajoute des séparateurs de milliers à un nombre.
  *
@@ -12,8 +13,7 @@ var clean_space_1 = require("./clean-space");
  * @param nombre
  * @param args
  */
-function thousandSeparator(nombre, args) {
-    if (args === void 0) { args = { decimal: true, pres: 2, arround: false }; }
+function thousandSeparator(nombre, args = { decimal: true, pres: 2, arround: false }) {
     if (typeof nombre !== 'string' && typeof nombre !== 'number') {
         return '';
     }
@@ -21,38 +21,38 @@ function thousandSeparator(nombre, args) {
     if (!args.pres) {
         args.pres = 2;
     }
-    var nombreStr = '';
+    let nombreStr = '';
     // rendre la chaine utilisable
     if (typeof nombre === 'string') {
         nombreStr = clean_space_1.cleanSpace(nombre);
     }
     if (typeof nombre === 'number') {
-        nombreStr = "" + nombre;
+        nombreStr = `${nombre}`;
     }
     // separer la partie entiere de la partie decimale
-    var partieEntiere = nombreStr.split('.')[0];
-    var partieDecimale = nombreStr.split('.')[1];
+    let partieEntiere = nombreStr.split('.')[0];
+    let partieDecimale = nombreStr.split('.')[1];
     // ajouter separateur de millier à la partie entiere
     partieEntiere = ajouterSeparateurDeMillier(partieEntiere);
     // arrondir partie decimale
-    partieDecimale = "0." + partieDecimale;
+    partieDecimale = `0.${partieDecimale}`;
     if (args.arround) {
         if (args.pres && args.pres > 0) {
-            var num = Number(+partieDecimale);
-            partieDecimale = "" + Number(num.toFixed(args.pres));
+            const num = Number(+partieDecimale);
+            partieDecimale = `${Number(num.toFixed(args.pres))}`;
         }
     }
     partieDecimale = partieDecimale.split('.')[1];
     // construire le resultat
-    var resultat = partieEntiere;
+    let resultat = partieEntiere;
     if (args.decimal) {
         if (nombre.toString().indexOf('.') !== -1) {
             if (partieDecimale && partieDecimale !== 'undefined') {
-                resultat += ".";
-                resultat += "" + partieDecimale;
+                resultat += `.`;
+                resultat += `${partieDecimale}`;
             }
             else if (nombre && nombre !== '') {
-                resultat += ".";
+                resultat += `.`;
             }
         }
     }
@@ -65,14 +65,14 @@ exports.thousandSeparator = thousandSeparator;
  * @param str
  */
 function ajouterSeparateurDeMillier(str) {
-    var result = '';
-    for (var i = 0; i < Math.ceil(str.length / 3); i++) {
-        var ofs = str.length - (i + 1) * 3;
+    let result = '';
+    for (let i = 0; i < Math.ceil(str.length / 3); i++) {
+        const ofs = str.length - (i + 1) * 3;
         if (ofs > 0) {
-            result = str.substr(ofs, 3) + " " + result;
+            result = `${str.substr(ofs, 3)} ${result}`;
         }
         else {
-            result = str.substr(0, 3 + ofs) + " " + result;
+            result = `${str.substr(0, 3 + ofs)} ${result}`;
         }
         if (i === 0) {
             result = result.substr(0, result.length - 1);

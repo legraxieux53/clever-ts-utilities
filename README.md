@@ -22,12 +22,17 @@ This library is a set of typescript utilities to save time
 - [isUndefinedOrNull](#isUndefinedOrNull)
 - [jsType](#jsType)
 - [getObjectByFieldValue](#getObjectByFieldValue)
+- [objectsEquals](#objectsEquals)
+- [allObjectsEquals](#allObjectsEquals)
+- [arrayObjectContain](#arrayObjectContain)
+- [setObjectsEquals](#setObjectsEquals)
 
 ### [Dates](#Dates)
 
 - [dateOperation](#dateOperation)
 - [dateCompare](#dateCompare)
 - [dateMonthPeriod](#dateMonthPeriod)
+- [dateYearPeriod](#dateYearPeriod)
 
 ### [Strings](#Strings)
 
@@ -90,7 +95,7 @@ getValuesFromDictionnary(dic: {[key: string]: any}): any[]
 
 ### isAllEqual
 
-Checks that all values in an array are equal
+Checks that all string values in an array are equal
 
 ```typescript
 isAllEqual(chars: any[]): boolean
@@ -154,6 +159,38 @@ Get an object in a list by value of one field, like id.
 getObjectByFieldValue(obj: any[], fieldname: string, fieldvalue: any): any
 ```
 
+### objectsEquals
+
+Match two objects.
+
+```typescript
+objectsEquals(obj1: any, obj2: any, ignoreProps?: string[]): boolean
+```
+
+### allObjectsEquals
+
+Match an object list.
+
+```typescript
+allObjectsEquals(objs: any[], ignoreProps?: string[]): boolean
+```
+
+### arrayObjectContain
+
+Check if an array contain object
+
+```typescript
+arrayObjectContain(array: any[], obj: any, ignoreProps?: string[]): boolean
+```
+
+### setObjectsEquals
+
+Execute a Set Javascript in scope of object
+
+```typescript
+setObjectsEquals(objs: any[], ignoreProps?: string[]): any[]
+```
+
 ## Dates
 
 ### dateOperation
@@ -178,6 +215,14 @@ Takes date and return first and last date of the current month
 
 ```typescript
 dateMonthPeriod(date: Date): Array<Date>
+```
+
+### dateYearPeriod
+
+Takes date and return first and last date of the current year
+
+```typescript
+dateYearPeriod(date: Date): Array<Date>
 ```
 
 ## Strings

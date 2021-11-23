@@ -1,5 +1,5 @@
 export declare function paginate(params: {
     data: Array<any>;
-    pageIndex: number;
+    indexPage: number;
     pageSize: number;
 }): Array<any>;

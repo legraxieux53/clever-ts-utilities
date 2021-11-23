@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.jsType = void 0;
 /**
  * Determine le type des objets et variables en JS
  */

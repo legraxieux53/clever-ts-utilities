@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.DateOperationEnum = exports.dateOperation = void 0;
 function dateOperation(params) {
     switch (params.operation) {
         case DateOperationEnum.DAYS_MINUS:

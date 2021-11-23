@@ -1,18 +1,30 @@
 {
   "name": "clever-ts-utilities",
-  "version": "1.11.0",
+  "version": "1.12.0",
   "description": "This library is a set of typescript utilities to save time",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
-    "build": "tsc --build"
+    "build": "tsc --build",
+    "start": "node dist/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/legraxieux53/clever-ts-utilities.git"
   },
-  "keywords": [],
+  "keywords": [
+    "set",
+    "array",
+    "paginate",
+    "type",
+    "copy",
+    "equal",
+    "object",
+    "contain",
+    "date",
+    "trim"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -29,7 +41,11 @@
     "jasmine-ts-console-reporter": "^3.1.1"
   },
   "dependencies": {
+    "@types/flat": "^5.0.2",
+    "@types/object-path": "^0.11.1",
+    "flat": "^5.0.2",
     "nyc": "^15.1.0",
+    "object-path": "^0.11.8",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.3"
   }
