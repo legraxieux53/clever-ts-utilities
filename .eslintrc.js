@@ -14,9 +14,10 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
     ],
     "rules": {
         // enable additional rules
+        "linebreak-style": ["error", "windows", "unix"]
     }
 };
