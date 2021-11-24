@@ -1,3 +1,9 @@
+#### 2.0.0 (2021-11-24)
+
+##### Bug Fixes
+
+*  Correction objectEquals ([c9a308d7](https://github.com/legraxieux53/clever-ts-utilities/commit/c9a308d7a5a32f10d4f329b0f4e92822355e82d6))
+
 #### 1.12.0 (2021-11-23)
 
 ##### Documentation Changes
