@@ -7,7 +7,8 @@
   "scripts": {
     "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
     "build": "tsc --build",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "changelog": "git-chglog --output CHANGELOG.md"
   },
   "repository": {
     "type": "git",
