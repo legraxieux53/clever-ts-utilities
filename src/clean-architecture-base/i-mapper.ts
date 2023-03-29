@@ -8,7 +8,7 @@
  * @template I
  * @template O
  */
-export interface Mapper<I, O> {
+export interface IMapper<I, O> {
     /**
      * @description Map from domain to data layer
      * @date 22/03/2023 - 11:25:00
