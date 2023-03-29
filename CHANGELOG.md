@@ -1,4 +1,29 @@
 
+<a name="v2.1.1"></a>
+## [v2.1.1](https://github.com/legraxieux53/clever-ts-utilities/compare/v2.1.0...v2.1.1) (2023-03-29)
+
+### Fix
+
+* Correction of availability of clean arch util
+* Correction of availability of clean arch util
+
+
+<a name="v2.1.0"></a>
+## [v2.1.0](https://github.com/legraxieux53/clever-ts-utilities/compare/v2.0.0...v2.1.0) (2023-03-29)
+
+### Feat
+
+* Adding clean architecture utilities
+
+
+<a name="v2.0.0"></a>
+## [v2.0.0](https://github.com/legraxieux53/clever-ts-utilities/compare/v1.12.0...v2.0.0) (2023-03-29)
+
+### Fix
+
+* Correction objectEquals
+
+
 <a name="v1.12.0"></a>
 ## [v1.12.0](https://github.com/legraxieux53/clever-ts-utilities/compare/v1.11.0...v1.12.0) (2023-03-29)
 
@@ -91,47 +116,7 @@
 
 
 <a name="v1.2.0"></a>
-## [v1.2.0](https://github.com/legraxieux53/clever-ts-utilities/compare/v2.1.1...v1.2.0) (2023-03-29)
-
-
-<a name="v2.1.1"></a>
-## [v2.1.1](https://github.com/legraxieux53/clever-ts-utilities/compare/v2.0.0...v2.1.1) (2023-03-29)
-
-### Feat
-
-* Adding clean architecture utilities
-
-
-<a name="v2.0.0"></a>
-## [v2.0.0](https://github.com/legraxieux53/clever-ts-utilities/compare/v1.6.1...v2.0.0) (2023-03-29)
-
-### Docs
-
-* ignore vscode
-
-### Feat
-
-* :sparkles: adding objects matching
-* :sparkles: Adding sort feature for arrays of object
-* :sparkles: adding dateMonthPeriod
-* :memo: Update changelog
-* :sparkles: handle http requests pending
-* **trim-object:** :sparkles: Adding trim object
-
-### Feature
-
-* manage httprequest pending
-* Manage iterations
-
-### Fix
-
-* Correction objectEquals
-* iterator bug
-* iterator bug
-* bug subject
-* correction pending-request
-* bug: isUndefinedOrNull not took 0
-* **types:** Correction matching types
+## [v1.2.0](https://github.com/legraxieux53/clever-ts-utilities/compare/v1.6.1...v1.2.0) (2023-03-29)
 
 
 <a name="v1.6.1"></a>
