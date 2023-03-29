@@ -62,6 +62,15 @@ This library is a set of typescript utilities to save time
 - [addObserver](#addObserver)
 - [removeObserver](#removeObserver)
 
+### [CleanArchitectureBase](#CleanArchitectureBase)
+
+- [BaseModelWithout-props](#BaseModelWithout-props)
+- [BaseModel](#BaseModel)
+- [ICommandHandler](#ICommandHandler)
+- [IQueryHandler](#IQueryHandler)
+- [IUsecase](#IUsecase)
+- [IMapper](#IMapper)
+
 ## Install
 
 run
@@ -426,3 +435,64 @@ Register observer
 ### removeObserver
 
 Unregister observer
+
+## CleanArchitectureUtils
+This is a set of utilities for clean architecture project.
+
+### BaseModelWithout-props
+This class maybe extended by models and define an update method to model
+
+```Typescript
+export class User extends BaseModelWithoutProps<User> {
+  login: string;
+  email: string;
+  password: string;
+  phone: string;
+  avatar: string;
+}
+
+// Initialize a new instance of the User class:
+const user: User = new User(); // option 1
+
+const user: User = new User({  // option 2
+  login: 'admin',
+  email: 'admin@mail.com',
+});
+
+// Update the user instance:
+user.update({
+  login: 'admin 2',
+});
+```
+
+### BaseModel
+
+This class work like <code>BaseModelWithoutProps</code>. But add <code>id</code>, <code>createdAt</code>
+and <code>updatedAt</code> properties to model
+
+### ICommandHandler
+
+This is a command handler interface for CQRS approach
+```Typescript
+interface ICommandHandler<C>
+```
+
+### IQueryHandler
+
+This is a query handler interface for CQRS approach
+```Typescript
+interface IQueryHandler<Q, R>
+```
+
+### IUsecase
+
+This is a usecase interface for hexagonal and approach
+```Typescript
+interface IUsecase<C, T>
+```
+### IMapper
+
+This is a mapper interface for mapping between domain and data layer
+```Typescript
+interface IMapper<I, O>
+```

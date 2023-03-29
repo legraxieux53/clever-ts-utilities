@@ -1,6 +1,6 @@
 {
   "name": "clever-ts-utilities",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "This library is a set of typescript utilities to save time",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
