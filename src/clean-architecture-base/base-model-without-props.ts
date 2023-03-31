@@ -13,9 +13,9 @@ export class BaseModelWithoutProps<T> {
    * @date 29/03/2023 - 12:33:25
    *
    * @constructor
-   * @param {?Partial<T>} [data]
+   * @param {?T} [data]
    */
-  constructor(data?: Partial<T>) {
+  constructor(data?: T) {
     Object.assign(this, data);
   }
 
@@ -23,9 +23,9 @@ export class BaseModelWithoutProps<T> {
    * @description Update model
    * @date 29/03/2023 - 12:33:10
    *
-   * @param {(Omit<Partial<T>, 'id' | 'createdAt' | 'updatedAt'>)} data
+   * @param {(Omit<T, 'id' | 'createdAt' | 'updatedAt'>)} data
    */
-  update(data: Omit<Partial<T>, 'id' | 'createdAt' | 'updatedAt'>) {
+  update(data: Omit<T, 'id' | 'createdAt' | 'updatedAt' | 'deletedAt'>) {
     Object.assign(this, data);
   }
 }
