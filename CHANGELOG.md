@@ -1,4 +1,16 @@
 
+<a name="v2.2.0"></a>
+## [v2.2.0](https://github.com/legraxieux53/clever-ts-utilities/compare/v2.1.3...v2.2.0) (2023-03-31)
+
+### Feat
+
+* Add OmitMethods type and fix BaseModel
+
+### Update
+
+* changelog
+
+
 <a name="v2.1.3"></a>
 ## [v2.1.3](https://github.com/legraxieux53/clever-ts-utilities/compare/v2.1.2...v2.1.3) (2023-03-31)
 
