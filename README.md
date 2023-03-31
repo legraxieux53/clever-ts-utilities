@@ -71,6 +71,10 @@ This library is a set of typescript utilities to save time
 - [IUsecase](#IUsecase)
 - [IMapper](#IMapper)
 
+### [Types](#Types)
+
+- [OmitMethods](#OmitMethods)
+
 ## Install
 
 run
@@ -495,4 +499,14 @@ interface IUsecase<C, T>
 This is a mapper interface for mapping between domain and data layer
 ```Typescript
 interface IMapper<I, O>
+```
+
+## Types
+
+### OmitMethods
+
+<code>OmitMethods</code> type omit methods from type.
+
+```Typescript
+type OmitMethods<T>
 ```
