@@ -1,4 +1,12 @@
 
+<a name="v2.1.3"></a>
+## [v2.1.3](https://github.com/legraxieux53/clever-ts-utilities/compare/v2.1.2...v2.1.3) (2023-03-31)
+
+### Fix
+
+* Remove partial on baseModel
+
+
 <a name="v2.1.2"></a>
 ## [v2.1.2](https://github.com/legraxieux53/clever-ts-utilities/compare/v2.1.1...v2.1.2) (2023-03-29)
 
