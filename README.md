@@ -1,80 +1,6 @@
 # clever-ts-utilities
 
 This library is a set of typescript utilities to save time
-
-## Summary
-
-### [Install](#Install)
-
-### [Arrays](#Arrays)
-
-- [paginate](#paginate)
-- [strRemoveBeginingCommonChars](#strRemoveBeginingCommonChars)
-- [getDictionnaryValues](#getDictionnaryValues)
-- [isAllEqual](#isAllEqual)
-- [enumarableFromListEqual](#enumarableFromListEqual)
-- [deleteFromArray](#deleteFromArray)
-- [objectSort](#objectSort)
-
-### [Common](#Common)
-
-- [copy](#copy)
-- [isUndefinedOrNull](#isUndefinedOrNull)
-- [jsType](#jsType)
-- [getObjectByFieldValue](#getObjectByFieldValue)
-- [objectsEquals](#objectsEquals)
-- [allObjectsEquals](#allObjectsEquals)
-- [arrayObjectContain](#arrayObjectContain)
-- [setObjectsEquals](#setObjectsEquals)
-
-### [Dates](#Dates)
-
-- [dateOperation](#dateOperation)
-- [dateCompare](#dateCompare)
-- [dateMonthPeriod](#dateMonthPeriod)
-- [dateYearPeriod](#dateYearPeriod)
-
-### [Strings](#Strings)
-
-- [cleanSpace](#cleanSpace)
-- [thousandSeparator](#thousandSeparator)
-- [isStringUndefinedOrNull](#isStringUndefinedOrNull)
-- [getCharsAt](#getCharsAt)
-- [insertString](#insertString)
-- [CharsCollection & CharsIteration](#CharsCollection_&_CharsIteration)
-- [Trim Object](#Trim_Object)
-
-### [Files](#Files)
-
-- [fileToBase64](#fileToBase64)
-- [fileToBlob](#fileToBlob)
-- [fileToString](#fileToString)
-- [serializeFile](#serializeFile)
-- [fileModelToBlob](#fileModelToBlob)
-- [buildDownloadFileUrl](#buildDownloadFileUrl)
-
-### [HttpRequestPendingFacade](#HttpRequestPendingFacade)
-
-- [getInstance](#getInstance)
-- [incrementUrl](#incrementUrl)
-- [decrementUrl](#decrementUrl)
-- [isPending](#isPending)
-- [addObserver](#addObserver)
-- [removeObserver](#removeObserver)
-
-### [CleanArchitectureBase](#CleanArchitectureBase)
-
-- [BaseModelWithout-props](#BaseModelWithout-props)
-- [BaseModel](#BaseModel)
-- [ICommandHandler](#ICommandHandler)
-- [IQueryHandler](#IQueryHandler)
-- [IUsecase](#IUsecase)
-- [IMapper](#IMapper)
-
-### [Types](#Types)
-
-- [OmitMethods](#OmitMethods)
-
 ## Install
 
 run
@@ -499,6 +425,33 @@ interface IUsecase<C, T>
 This is a mapper interface for mapping between domain and data layer
 ```Typescript
 interface IMapper<I, O>
+```
+
+### AutoMapper
+
+AutoMapper allow to map automaticaly Objects like C# or Java AutoMappers.
+
+<strong>It work well with EsNext target configuration</strong>
+
+```Typescript
+const source = {
+  name: "John",
+  surname: "Doe",
+  age: 30
+}
+
+interface IDestination {
+  firstName: string;
+  lastName: string;
+  age: number;
+}
+
+const destination = new AutoMapper()
+  .forSource(Object)
+  .forDestination(IDestination)
+  .mapFrom("name", "firstName") // Optional  - if not specified, it will be mapped by default
+  .mapFrom("surname", "lastName") // Optional  - if not specified, it will be mapped by default
+  .execute(source);
 ```
 
 ## Types
