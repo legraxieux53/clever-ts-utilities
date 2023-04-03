@@ -4,3 +4,4 @@ export * from "./i-query.handler";
 export * from "./i-command.handler";
 export * from "./base-model";
 export * from "./base-model-without-props";
+export * from "./auto-mapper";

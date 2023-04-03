@@ -26,7 +26,7 @@
  * @class AutoMapper
  * @typedef {AutoMapper}
  */
-class AutoMapper {
+export class AutoMapper {
     private sourceType!: any;
     private destinationType!: any;
     private mappings: Map<string, string> = new Map();
