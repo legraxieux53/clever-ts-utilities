@@ -1,4 +1,16 @@
 
+<a name="v2.3.1"></a>
+## [v2.3.1](https://github.com/legraxieux53/clever-ts-utilities/compare/v2.2.0...v2.3.1) (2023-04-03)
+
+### Feat
+
+* Add AutoMapper It work well with EsNext target configuration
+
+### Fix
+
+* Export AutoMapper
+
+
 <a name="v2.2.0"></a>
 ## [v2.2.0](https://github.com/legraxieux53/clever-ts-utilities/compare/v2.1.3...v2.2.0) (2023-03-31)
 
