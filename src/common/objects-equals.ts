@@ -24,7 +24,7 @@ export function objectsEquals(
         return false;
     }
 
-    if (ignoreProps && ignoreProps?.length > 0) {
+    if (ignoreProps && ignoreProps.length > 0) {
         for (const prop of ignoreProps) {
             objectPath.set(_obj1, prop, undefined);
             objectPath.set(_obj2, prop, undefined);
@@ -71,9 +71,9 @@ export function arrayObjectContain(array: any[], obj: any,
     const _obj = copy(obj);
     const _array = copy(array);
 
-    if (ignoreProps && ignoreProps?.length > 0) {
+    if (ignoreProps && ignoreProps.length > 0) {
         for (const prop of ignoreProps) {
-            _array?.map(item => objectPath.set(item, prop, undefined));
+            _array && _array.map(item => objectPath.set(item, prop, undefined));
             objectPath.set(_obj, prop, undefined);
         }
     }
@@ -95,17 +95,17 @@ export function setObjects(
     ignoreProps?: string[]): any[] {
     const _objs = copy(objs);
 
-    if (ignoreProps && ignoreProps?.length > 0) {
+    if (ignoreProps && ignoreProps.length > 0) {
         for (const prop of ignoreProps) {
-            _objs?.map(item => {
+            _objs && _objs.map(item => {
                 objectPath.set(item, prop, undefined);
             });
         }
     }
-    const objsString: string[] = _objs?.map(item => stringify(item));
+    const objsString: string[] = objs && _objs.map(item => stringify(item));
     const objsStringSet = [...new Set(objsString)];
 
-    return objsStringSet?.map(item => {
+    return objsStringSet && objsStringSet.map(item => {
         try {
             return JSON.parse(item);
         } catch (e) {

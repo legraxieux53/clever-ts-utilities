@@ -6,7 +6,7 @@ export function trimObject(obj: any): any {
         return obj;
     }
 
-    if (obj?.length > 0) {
+    if (obj && obj.length > 0) {
         for (let item of obj) {
             item = trimObject(item);
         }
