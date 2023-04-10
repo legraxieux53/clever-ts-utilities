@@ -1,4 +1,12 @@
 
+<a name="v2.3.4"></a>
+## [v2.3.4](https://github.com/legraxieux53/clever-ts-utilities/compare/v2.3.2...v2.3.4) (2023-04-10)
+
+### Feat
+
+* Add responsiveDialogWidth
+
+
 <a name="v2.3.2"></a>
 ## [v2.3.2](https://github.com/legraxieux53/clever-ts-utilities/compare/v2.3.1...v2.3.2) (2023-04-03)
 
