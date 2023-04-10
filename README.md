@@ -463,3 +463,10 @@ const destination = new AutoMapper()
 ```Typescript
 type OmitMethods<T>
 ```
+
+## Responsive Dialog width
+Get responsive dialog width with 90% width for mobile devices
+
+```Typescript
+export function responsiveDialogWidth(width: string): string
+```

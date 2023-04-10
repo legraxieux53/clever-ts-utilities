@@ -1,6 +1,6 @@
 {
   "name": "clever-ts-utilities",
-  "version": "2.3.2",
+  "version": "2.3.4",
   "description": "This library is a set of typescript utilities to save time",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -44,10 +44,12 @@
   "dependencies": {
     "@types/flat": "^5.0.2",
     "@types/object-path": "^0.11.1",
+    "@types/reflect-metadata": "^0.1.0",
     "flat": "^5.0.2",
     "json-stable-stringify": "^1.0.1",
     "nyc": "^15.1.0",
     "object-path": "^0.11.8",
+    "reflect-metadata": "^0.1.13",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.3"
   }
