@@ -5,3 +5,5 @@ export * from "./i-command.handler";
 export * from "./base-model";
 export * from "./base-model-without-props";
 export * from "./auto-mapper";
+export * from "./i-tenant-command.handler";
+export * from "./i-tenant-query.handler";
