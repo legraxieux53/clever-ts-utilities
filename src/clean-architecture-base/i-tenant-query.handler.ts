@@ -2,6 +2,7 @@
  * @description Query handler interface
  * @date 22/03/2023 - 15:27:27
  *
+ * @deprecated Use IQueryHandler with context instead
  * @export
  * @interface IQueryHandler
  * @typedef {IQueryHandler}

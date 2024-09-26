@@ -2,6 +2,7 @@
  * @description Command handler interface
  * @date 22/03/2023 - 15:26:32
  *
+ * @deprecated Use ICommandHandler with context instead
  * @export
  * @interface ICommandHandler
  * @typedef {ICommandHandler}
